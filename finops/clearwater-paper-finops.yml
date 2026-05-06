@@ -1,5 +1,6 @@
 specification: FinOps Framework
 specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
 alignedWith:
   framework: FinOps Foundation Framework
   frameworkUrl: https://www.finops.org/framework/
@@ -8,123 +9,53 @@ alignedWith:
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
 provider: Clearwater Paper
 providerId: clearwater-paper
-publisherName: Clearwater Paper
-serviceCategory: API
+publisherName: Clearwater Paper Corporation
+serviceCategory: Consumer Goods Manufacturing
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
 tags:
+  - FinOps
+  - FOCUS
   - Tissue
   - Paperboard
   - Consumer
-  - FinOps
-  - Cost Management
-  - FOCUS
-description: FinOps framework definition for the Clearwater Paper API surface. Provides a FOCUS-aligned
-  mapping for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
-principles:
-  - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
-  - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
-  - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
-  - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
-domains:
-  - name: Understand Usage and Cost
-    capabilities:
-      - Data Ingestion
-      - Allocation
-      - Reporting and Analytics
-      - Anomaly Management
-  - name: Quantify Business Value
-    capabilities:
-      - Planning and Estimating
-      - Forecasting
-      - Budgeting
-      - Benchmarking
-      - Unit Economics
-  - name: Optimize Usage and Cost
-    capabilities:
-      - Architecting for Cloud
-      - Rate Optimization
-      - Workload Optimization
-      - Cloud Sustainability
-      - Licensing and SaaS
-  - name: Manage the FinOps Practice
-    capabilities:
-      - FinOps Practice Operations
-      - FinOps Education and Enablement
-      - Invoicing and Chargeback
-      - Onboarding Workloads
-      - Intersecting Disciplines
+notes: Clearwater Paper is a manufacturer, not a software vendor. There is no public API price list; this
+  artifact captures only the structural FinOps shape of a partner-contract or EDI integration.
+description: 'FinOps placeholder for Clearwater Paper: no public API pricing surface, so meters and FOCUS
+  columns reflect the typical shape of an enterprise EDI / partner contract.'
+sources:
+  - https://www.clearwaterpaper.com
 billingModel:
-  pricingCategory: Usage-Based
+  pricingCategory: Enterprise Contract
   billingFrequency: Monthly
   billingCurrency: USD
   chargeCategories:
-    - Usage
     - Purchase
     - Tax
-    - Credit
-    - Adjustment
-  chargeFrequency: Recurring
 focusColumns:
   ServiceName: Clearwater Paper
-  ServiceCategory: Developer Tools / API
+  ServiceCategory: Consumer Goods Manufacturing
   ProviderName: Clearwater Paper
-  PublisherName: Clearwater Paper
-  InvoiceIssuerName: Clearwater Paper
-  PricingCategory: Usage-Based
-  PricingUnit: request
+  PublisherName: Clearwater Paper Corporation
+  PricingCategory: Enterprise Contract
   BillingCurrency: USD
-  ChargeCategory: Usage
 meters:
-  - name: api_requests
-    description: Count of billable API requests
-    unit: request
+  - name: contract_subscription
+    description: Recurring partner integration / EDI subscription fee per the enterprise contract.
+    unit: month
     aggregation: sum
     dimensions:
-      - api
-      - endpoint
-      - tier
-      - region
-      - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
-    unit: GB
-    aggregation: sum
-    dimensions:
-      - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
-    aggregation: sum
-    dimensions:
-      - api
-      - endpoint
-      - tier
-apis:
-  - name: Clearwater Paper API
-    baseURL: https://api.clearwaterpaper.com
-    tags:
-      - Tissue
-      - Paperboard
-      - Consumer
-    serviceName: Clearwater Paper API
-    serviceCategory: API
-unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
-    target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
-    target: TBD
+      - contract
+principles:
+  - name: Visibility
+    description: Reconcile usage against the partner contract via the partner's reporting deliverables.
+  - name: Allocation
+    description: Allocate the contract to the consuming retail-supply or distributor-operations team.
+  - name: Optimization
+    description: Right-size the partner contract scope at each renewal.
+  - name: Accountability
+    description: Assign a partner-integration owner accountable for renewal and utilization review.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
