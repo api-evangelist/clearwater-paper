@@ -28,6 +28,8 @@ apis:
     description: >-
       The Clearwater Paper API provides access to platform services and data for enterprise integration and automation.
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/clearwaterpaper
   - type: Website
     url: https://www.clearwaterpaper.com
 maintainers:
