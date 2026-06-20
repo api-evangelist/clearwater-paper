@@ -2,7 +2,7 @@ aid: clearwater-paper
 url: https://raw.githubusercontent.com/api-evangelist/clearwater-paper/refs/heads/main/apis.yml
 name: Clearwater Paper
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Tissue
   - Paperboard
@@ -19,7 +19,7 @@ apis:
       - Tissue
       - Paperboard
       - Consumer
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://api.clearwaterpaper.com
     humanURL: https://developer.clearwaterpaper.com
     properties:
