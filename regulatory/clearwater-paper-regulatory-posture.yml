@@ -1,0 +1,39 @@
+generated: '2026-09-19'
+method: searched
+probe: true
+source: >-
+  Read the corporate site's footer legal pages (Privacy Notice, Terms and Conditions of Use,
+  California Transparency in Supply Chain Disclosure) and probed the conventional regulatory paths
+  on www.clearwaterpaper.com. Clearwater Paper is a paperboard manufacturer with no developer
+  documentation, so the docs-site search step (data residency, export, age signals) had no surface
+  to read.
+note: >-
+  One signal verified. The Privacy Notice (effective March 23, 2020) publishes a named channel for
+  personal-data access, correction and deletion requests — an email address and a toll-free number —
+  and a Nevada NRS 603A sale opt-out route through the same email, while stating the company does
+  not currently sell data that triggers that opt-out. It makes no statement about Global Privacy
+  Control, so global_privacy_control is not recorded. No accessibility statement, VPAT, SBOM,
+  subprocessor list, DPA, data-residency page, transparency report or support-lifetime statement was
+  found; /accessibility/default.aspx returns 404. The California Transparency in Supply Chain
+  Disclosure is a supply-chain (SB 657) statement, not a DSA/OSA transparency report, and is not
+  recorded as one.
+signals:
+  data_subject_request:
+    url: https://www.clearwaterpaper.com/privacy-notice/default.aspx
+    channel: email + phone
+    contact: corporate.communications@clearwaterpaper.com
+    phone: '1-888-690-3859'
+    evidence:
+    - source: https://www.clearwaterpaper.com/privacy-notice/default.aspx
+      quote: >-
+        You may also send us an email at corporate.communications@clearwaterpaper.com to request
+        access to, correct or delete any personal information that you have provided to us.
+      effective: '2020-03-23'
+    note: >-
+      Nevada residents may submit an NRS 603A sale opt-out to the same address; the notice states
+      the company does not currently sell data triggering that statute's opt-out requirements.
+probed:
+- {url: 'https://www.clearwaterpaper.com/privacy-notice/default.aspx', status: 200, signal: data_subject_request, hit: true}
+- {url: 'https://www.clearwaterpaper.com/terms-and-conditions-of-use/default.aspx', status: 200, signal: null, hit: false, note: 'no API, automated-access or GPC language'}
+- {url: 'https://www.clearwaterpaper.com/accessibility/default.aspx', status: 404, signal: accessibility_conformance, hit: false}
+- {url: 'https://www.clearwaterpaper.com/.well-known/security.txt', status: 200, signal: sbom, hit: false, note: 'soft-200 "Invalid key" — no security.txt, no Policy line to follow'}

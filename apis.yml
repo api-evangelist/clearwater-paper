@@ -27,36 +27,85 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/clearwater-paper.png
 tags:
-  - Tissue
   - Paperboard
-  - Consumer
+  - Tissue
+  - Packaging
+  - Manufacturing
+  - Consumer Goods
+  - Forest Products
+  - Fortune 1000
 description: >-
-  Clearwater Paper is a major US corporation and Fortune 1000 company. The Clearwater Paper API provides programmatic access to its platform services, data, and integrations for enterprise customers and partners.
+  Clearwater Paper Corporation (NYSE: CLW) is a Spokane, Washington-based manufacturer of bleached
+  paperboard for North American packaging converters and, historically, private-label tissue for
+  retailers. It is a Fortune 1000 company with mills in Idaho, Arkansas and Georgia. Clearwater Paper
+  publishes no public API, developer program, SDK, or machine-readable contract: its corporate site
+  is an investor-relations platform with a customer-login landing page that describes, but does not
+  name or link, a secure customer web portal, and the api./developer. hostnames an earlier version of
+  this record pointed at do not exist in DNS. Trading-partner EDI (X12 850/810/856/997) is offered
+  only through third-party VAN and integration vendors, not from a Clearwater Paper developer surface.
 created: '2026-04-19'
-modified: '2026-04-19'
+modified: '2026-09-19'
 specificationVersion: '0.23'
-apis:
-  - aid: clearwater-paper:clearwater-paper-api
-    name: Clearwater Paper API
-    tags:
-      - Tissue
-      - Paperboard
-      - Consumer
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://api.clearwaterpaper.com
-    humanURL: https://developer.clearwaterpaper.com
-    properties:
-      - url: https://developer.clearwaterpaper.com/docs
-        type: Documentation
-    description: >-
-      The Clearwater Paper API provides access to platform services and data for enterprise integration and automation.
+apis: []
 common:
-  - type: DomainSecurity
-    url: security/clearwater-paper-domain-security.yml
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/clearwaterpaper
   - type: Website
     url: https://www.clearwaterpaper.com
+  - type: PrivacyPolicy
+    url: https://www.clearwaterpaper.com/privacy-notice/default.aspx
+  - type: TermsOfService
+    url: https://www.clearwaterpaper.com/terms-and-conditions-of-use/default.aspx
+  - type: Support
+    url: https://www.clearwaterpaper.com/contact-us/default.aspx
+    x-note: Category contact forms (paperboard, tissue, supplier, HR, investor relations); no developer support channel.
+  - type: Newsroom
+    url: https://www.clearwaterpaper.com/investors/press-releases/default.aspx
+  - type: Leadership
+    url: https://www.clearwaterpaper.com/about-us/leadership/default.aspx
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/clearwaterpaper
+  - type: DomainSecurity
+    url: security/clearwater-paper-domain-security.yml
+  - type: DataSubjectRequest
+    url: regulatory/clearwater-paper-regulatory-posture.yml
+    x-note: Privacy Notice names an email and toll-free number for access, correction and deletion requests.
+  - type: RegulatoryPosture
+    url: regulatory/clearwater-paper-regulatory-posture.yml
+  - type: Plans
+    url: plans/clearwater-paper-plans-pricing.yml
+    x-note: plan_count 0 — no API product or price list is published.
+  - type: RateLimits
+    url: rate-limits/clearwater-paper-rate-limits.yml
+    x-note: limit_count 0 — no API, so no limits are published.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-09-19'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Clearwater Paper is a paperboard and tissue manufacturer whose corporate site is a Q4 Inc.
+    investor-relations platform with no developer, API or documentation section; the
+    developer.clearwaterpaper.com and api.clearwaterpaper.com hosts the previous record named as
+    humanURL and baseURL return NXDOMAIN, every /.well-known/ path on www answers the platform's
+    11-byte "Invalid key" body, /llms.txt 404s, the customer-login page describes a customer portal
+    without naming or linking it, and the only EDI trace (X12 850/810/856/997) is a Cleo
+    trading-partner marketing page rather than any Clearwater Paper publication.
+  evidence:
+    - url: https://developer.clearwaterpaper.com/docs
+      status: 0
+    - url: https://api.clearwaterpaper.com/openapi.json
+      status: 0
+    - url: https://www.clearwaterpaper.com/customer-login/default.aspx
+      status: 200
+    - url: https://www.clearwaterpaper.com/.well-known/api-catalog
+      status: 200
+    - url: https://www.clearwaterpaper.com/llms.txt
+      status: 404
+    - url: https://www.clearwaterpaper.com/accessibility/default.aspx
+      status: 404
+  checked: '2026-09-19'

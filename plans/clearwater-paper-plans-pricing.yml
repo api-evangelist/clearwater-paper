@@ -4,42 +4,33 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Clearwater Paper
 providerId: clearwater-paper
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-05'
-reconciled: false
+modified: '2026-09-19'
+generated: '2026-09-19'
+method: searched
+reconciled: true
+source: https://www.clearwaterpaper.com/customer-login/default.aspx
+sources:
+  - https://www.clearwaterpaper.com/customer-login/default.aspx
+  - https://www.clearwaterpaper.com/contact-us/default.aspx
+  - https://www.clearwaterpaper.com/paperboard-products/default.aspx
 tags:
   - Tissue
   - Paperboard
   - Consumer
-notes: Clearwater Paper is a tissue and paperboard manufacturer. The company does not publish a public
-  developer API or commercial API pricing. Any EDI or partner integrations are negotiated under custom
-  enterprise contracts.
-description: Clearwater Paper does not publicly document an API product or price list. Integrations with
-  retail customers and distributors are negotiated bilaterally.
-sources:
-  - https://www.clearwaterpaper.com
-plans:
-  - id: clearwater-paper-enterprise
-    name: Enterprise Partner
-    type: enterprise
-    description: Custom-negotiated partner integration for retail customers, distributors, or EDI partners.
-      No public pricing.
-    entries:
-      - label: Partner Integration
-        name: partner_integration
-        type: subscription
-        metric: month
-        limit: -1
-        timeFrame: month
-        geo: US
-        unit: 1
-        price: contact sales
-        userMultiplied: false
-    elements:
-      - name: Custom partner integration
-      - name: Negotiated SLA
+plan_count: 0
+notes: >-
+  Clearwater Paper is a paperboard and tissue manufacturer and publishes no API product, developer
+  program, or API pricing. Searched 2026-09-19: the corporate site (a Q4 Inc. investor-relations
+  platform) has no developer, pricing, or plans section; the Customer Login page describes a "secure
+  customer web portal" for existing customers without naming or linking it; and the Contact Us page
+  routes every inquiry (paperboard, tissue, supplier, HR, investor) through a web form. The
+  developer.clearwaterpaper.com and api.clearwaterpaper.com hosts named in an earlier stub of this
+  record do not exist in DNS. This replaces a 2026-05-04 bulk-sweep artifact that listed a single
+  "Enterprise Partner / contact sales" plan the provider never published (roadmap#35).
+description: >-
+  Clearwater Paper does not publish an API, an API price list, or any plan tiers. There is nothing to
+  record; plan_count is an honest zero.
+plans: []
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

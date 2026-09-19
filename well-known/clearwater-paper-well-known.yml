@@ -1,0 +1,76 @@
+generated: '2026-09-19'
+method: probed
+source: >-
+  Anonymous HTTPS probes of the canonical /.well-known/ discovery paths (security.txt,
+  openid-configuration, oauth-authorization-server, oauth-protected-resource, api-catalog,
+  ai-plugin.json, agent-card.json, agent.json) against every host this record knows: the
+  registrable domain (clearwaterpaper.com), www, and the two hosts the prior record named as
+  the API baseURL and developer portal (api.clearwaterpaper.com, developer.clearwaterpaper.com).
+  Clearwater Paper publishes no OpenAPI, so there are no servers[] hosts to add.
+note: >-
+  NO DOCUMENT WAS SERVED ON ANY HOST. www.clearwaterpaper.com and the apex are the same Q4 Inc.
+  investor-relations platform (CNAME webfarm-202.q4web.com, fronted by Cloudflare) and answer every
+  /.well-known/ path with HTTP 200 and the 11-byte text/html body "Invalid key" — a platform error
+  string, not a discovery document; /llms.txt is an honest 404. api.clearwaterpaper.com and
+  developer.clearwaterpaper.com do not exist in DNS (NXDOMAIN, no A or CNAME record), so every probe
+  against them fails before a TCP connection and is recorded as status 0. No WellKnown or SecurityTxt
+  pointer is emitted in apis.yml because nothing here is a served document.
+hosts:
+- host: www.clearwaterpaper.com
+  note: >-
+    Corporate site on Q4 Inc. (webfarm-202.q4web.com) behind Cloudflare; page routes 403-challenge a
+    bare crawler, but /.well-known/ paths bypass the challenge and return the platform's 11-byte
+    "Invalid key" body with HTTP 200 for every path. The directory paths (openid-configuration,
+    oauth-authorization-server, oauth-protected-resource, api-catalog) first 301 to a trailing-slash
+    form and then 200 with the same body.
+  documents:
+  - {path: /.well-known/security.txt, status: 200, file: null, note: 'soft-200: body is "Invalid key" (11 bytes, text/html)'}
+  - {path: /.well-known/openid-configuration, status: 200, file: null, note: 'soft-200 after 301 to trailing slash: body is "Invalid key"'}
+  - {path: /.well-known/oauth-authorization-server, status: 200, file: null, note: 'soft-200 after 301 to trailing slash: body is "Invalid key"'}
+  - {path: /.well-known/oauth-protected-resource, status: 200, file: null, note: 'soft-200 after 301 to trailing slash: body is "Invalid key"'}
+  - {path: /.well-known/api-catalog, status: 200, file: null, note: 'soft-200 after 301 to trailing slash: body is "Invalid key"'}
+  - {path: /.well-known/ai-plugin.json, status: 200, file: null, note: 'soft-200: body is "Invalid key"'}
+  - {path: /.well-known/agent-card.json, status: 200, file: null, note: 'soft-200: body is "Invalid key" — not a JSON object, no AgentCard'}
+  - {path: /.well-known/agent.json, status: 200, file: null, note: 'soft-200: body is "Invalid key" — not a JSON object, no AgentCard'}
+- host: clearwaterpaper.com
+  note: Apex; same Q4 platform and identical behaviour to www.
+  documents:
+  - {path: /.well-known/security.txt, status: 200, file: null, note: 'soft-200: body is "Invalid key"'}
+  - {path: /.well-known/openid-configuration, status: 200, file: null, note: 'soft-200 after 301 to trailing slash: body is "Invalid key"'}
+  - {path: /.well-known/oauth-authorization-server, status: 200, file: null, note: 'soft-200 after 301 to trailing slash: body is "Invalid key"'}
+  - {path: /.well-known/oauth-protected-resource, status: 200, file: null, note: 'soft-200 after 301 to trailing slash: body is "Invalid key"'}
+  - {path: /.well-known/api-catalog, status: 200, file: null, note: 'soft-200 after 301 to trailing slash: body is "Invalid key"'}
+  - {path: /.well-known/ai-plugin.json, status: 200, file: null, note: 'soft-200: body is "Invalid key"'}
+  - {path: /.well-known/agent-card.json, status: 200, file: null, note: 'soft-200: body is "Invalid key"'}
+  - {path: /.well-known/agent.json, status: 200, file: null, note: 'soft-200: body is "Invalid key"'}
+- host: api.clearwaterpaper.com
+  note: >-
+    NXDOMAIN — no A or CNAME record on 2026-09-19 (authoritative ns45/ns46.domaincontrol.com).
+    The prior apis.yml named this host as the API baseURL; it has never been an API host.
+  documents:
+  - {path: /.well-known/security.txt, status: 0, file: null}
+  - {path: /.well-known/openid-configuration, status: 0, file: null}
+  - {path: /.well-known/oauth-authorization-server, status: 0, file: null}
+  - {path: /.well-known/api-catalog, status: 0, file: null}
+  - {path: /.well-known/ai-plugin.json, status: 0, file: null}
+  - {path: /.well-known/agent-card.json, status: 0, file: null}
+  - {path: /.well-known/agent.json, status: 0, file: null}
+- host: developer.clearwaterpaper.com
+  note: >-
+    NXDOMAIN — no A or CNAME record on 2026-09-19. The prior apis.yml named this host as the
+    developer portal (humanURL) and /docs as Documentation; neither has ever resolved.
+  documents:
+  - {path: /.well-known/security.txt, status: 0, file: null}
+  - {path: /.well-known/openid-configuration, status: 0, file: null}
+  - {path: /.well-known/oauth-authorization-server, status: 0, file: null}
+  - {path: /.well-known/api-catalog, status: 0, file: null}
+  - {path: /.well-known/ai-plugin.json, status: 0, file: null}
+  - {path: /.well-known/agent-card.json, status: 0, file: null}
+  - {path: /.well-known/agent.json, status: 0, file: null}
+summary:
+  hosts_probed: 4
+  paths_probed: 30
+  documents_served: 0
+  soft_200s: 16
+  hard_404s: 0
+  dns_failures: 14

@@ -4,35 +4,29 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Clearwater Paper
 providerId: clearwater-paper
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-05'
-reconciled: false
+modified: '2026-09-19'
+generated: '2026-09-19'
+method: searched
+reconciled: true
+source: https://www.clearwaterpaper.com/customer-login/default.aspx
+sources:
+  - https://www.clearwaterpaper.com/customer-login/default.aspx
+  - https://www.clearwaterpaper.com/terms-and-conditions-of-use/default.aspx
 tags:
   - Tissue
   - Paperboard
   - Rate Limiting
-notes: Clearwater Paper does not publish public API rate limits. Any partner integration limits would
-  be defined inside the bilateral contract.
-description: No public rate-limit documentation exists. Limits are governed by individual partner / EDI
-  agreements.
-sources:
-  - https://www.clearwaterpaper.com
-responseCodes:
-  throttled: 429
-  serviceUnavailable: 503
-limits:
-  - name: Partner-contract defined
-    scope: account
-    metric: varies
-    limit: see partner agreement
-    notes: Limits are negotiated as part of each partner integration agreement.
-policies:
-  - name: Backoff strategy
-    description: On 429 responses, honor any Retry-After header and back off with jitter before retrying.
-  - name: Bilateral contract
-    description: Specific limits, retry policy, and SLAs are governed by the partner integration contract.
+limit_count: 0
+notes: >-
+  Clearwater Paper publishes no API and therefore no rate limits, quota windows, or rate-limit
+  response headers. Searched 2026-09-19: no developer documentation exists on clearwaterpaper.com,
+  the Terms and Conditions of Use say nothing about automated or programmatic access, and the
+  api.clearwaterpaper.com host an earlier stub named as the base URL does not exist in DNS. This
+  replaces a 2026-05-04 bulk-sweep artifact that listed a "partner-contract defined" limit and 429/503
+  response codes the provider never published (roadmap#35).
+description: >-
+  No public API, so no rate-limit documentation exists to record. limit_count is an honest zero.
+limits: []
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
