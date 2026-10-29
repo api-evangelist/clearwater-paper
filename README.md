@@ -1,4 +1,4 @@
-# Clearwater Paper (clearwater-paper)
+# Clearwater Paper
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,23 +64,100 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Clearwater Paper is a major US corporation and Fortune 1000 company. The Clearwater Paper API provides programmatic access to its platform services, data, and integrations for enterprise customers and partners.
+Clearwater Paper Corporation (NYSE: CLW) is a Spokane, Washington-based manufacturer of bleached paperboard for North American packaging converters and, historically, private-label tissue for retailers. It is a Fortune 1000 company with mills in Idaho, Arkansas and Georgia. Clearwater Paper publishes no public API, developer program, SDK, or machine-readable contract: its corporate site is an investor-relations platform with a customer-login landing page that describes, but does not name or link, a secure customer web portal, and the api./developer. hostnames an earlier version of this record pointed at do not exist in DNS. Trading-partner EDI (X12 850/810/856/997) is offered only through third-party VAN and integration vendors, not from a Clearwater Paper developer surface.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/clearwater-paper/refs/heads/main/apis.yml)
+**Areas:** Paperboard · Tissue · Packaging · Manufacturing · Consumer Goods · Forest Products · Fortune 1000
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Clearwater Paper on APIs.io
 
-## Tags:
+Everything profiled for Clearwater Paper is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/clearwater-paper/](https://apis.io/providers/clearwater-paper/)** — or go straight to one of the APIs or properties below.
 
- - Tissue, Paperboard, Consumer
+### Published properties
 
-## Timestamps
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- **Created:** 2026-04-19
-- **Modified:** 2026-04-19
+#### Security (1)
 
-## Maintainers
+Authentication, trust centre, and vulnerability disclosure.
 
-**FN:** Kin Lane
+- [Clearwater Paper Domain Security](https://apis.io/security/clearwater-paper/clearwater-paper-domain-security/)
 
-**Email:** kin@apievangelist.com
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Clearwater Paper Plans Pricing](https://apis.io/plans/clearwater-paper/clearwater-paper-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Clearwater Paper Rate Limits](https://apis.io/rate-limits/clearwater-paper/clearwater-paper-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Clearwater Paper Finops](https://apis.io/finops/clearwater-paper/clearwater-paper-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.clearwaterpaper.com)
+- [Support](https://www.clearwaterpaper.com/contact-us/default.aspx)
+- [Terms of service](https://www.clearwaterpaper.com/terms-and-conditions-of-use/default.aspx)
+- [Privacy policy](https://www.clearwaterpaper.com/privacy-notice/default.aspx)
+
+## API Evangelist rating
+
+**Kin Score 10.6** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 50.0 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 4.8 |
+| Access clarity | 21.1 |
+
+**Agent readiness 5.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | yes |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 17.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/clearwater-paper/](https://apis.io/providers/clearwater-paper/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Clearwater Paper: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/clearwater-paper/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
